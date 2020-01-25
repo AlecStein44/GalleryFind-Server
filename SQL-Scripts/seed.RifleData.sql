@@ -1,0 +1,9 @@
+BEGIN;
+
+INSERT INTO rifle
+    (name, img, caliber, bullet, powder, primer, brandcase, price, fps, min, avg, max, paragraph)
+VALUES
+    ('The first tester', 'https://www.ar15.com/ammo/project/Self_Defense_Ammo_FAQ/MOLON/Hornady%205.56%2070gr%20GMX%20TAP%20Barrier_files/1okw8dga1iieze4angfdqp8jwg7xonro.jpg', '5.56', '.224 Hornady 70gr GMX', 'Varget 25gr', 'WSR', 'LC', 0.20, 2900, .5, .8, 1, 'Paragraph Paragraph Paragraph Paragraph Paragraph Paragraph Paragraph Paragraph Paragraph Paragraph Paragraph Paragraph Paragraph Paragraph Paragraph Paragraph Paragraph Paragraph Paragraph Paragraph Paragraph Paragraph Paragraph Paragraph Paragraph Paragraph Paragraph Paragraph'),
+    ('The second tester', 'https://www.shopmyexchange.com/products/images/xlarge/4683344_0000.jpg', '308 Winchester', '.308 Hornady 140gr GMX', 'BLC(2) 40gr', 'WLR', 'PMC', 0.50, 2850, .6, .85, 1.1, 'Paragraph Paragraph Paragraph Paragraph Paragraph Paragraph Paragraph Paragraph Paragraph Paragraph Paragraph Paragraph Paragraph Paragraph Paragraph Paragraph Paragraph Paragraph Paragraph Paragraph Paragraph Paragraph Paragraph Paragraph Paragraph Paragraph Paragraph Paragraph'),
+    ('The third tester', 'https://www.gunwerks.com/uploads/images/large/56ab9ebe4ef5a.jpg', '6.5 Creedmoor', '.264 Hornady 120gr GMX', 'H414 44.5gr', 'FLR', 'Hornady', 0.60, 2960, .4, .5, .6, 'Paragraph Paragraph Paragraph Paragraph Paragraph Paragraph Paragraph Paragraph Paragraph Paragraph Paragraph Paragraph Paragraph Paragraph Paragraph Paragraph Paragraph Paragraph Paragraph Paragraph Paragraph Paragraph Paragraph Paragraph Paragraph Paragraph Paragraph Paragraph');
+COMMIT;
