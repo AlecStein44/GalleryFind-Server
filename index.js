@@ -5,6 +5,8 @@ const app = express();
 app.use(cors());
 app.use(express.static('public'));
 app.use(express.json());
+const { NODE_ENV } = require('./config')
+const { PORT, DB_URL} = require('./config')
 
 const db = knex({
   client: 'pg',
