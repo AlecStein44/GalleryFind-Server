@@ -44,3 +44,43 @@ app.get('/gallerypro', (req, res) => {
         })
     
 })
+
+app.post('/signup', (req, res) => {
+    const form = new formidable.IncomingForm();
+
+
+    form.on('fileBegin', function (name, file){
+        file.path = './public/uploads/' + file.name;
+    });
+
+    form.on('file', function (name, file){
+        console.log('Uploaded ' + file.name);
+    });
+
+    form.parse(req, function(err, fields, files) {
+        console.log(files)
+        console.log(fields)
+        let status = 400;
+          db('userdata')
+              .insert([
+                {
+                    email: fields.email,
+                    username: fields.username,
+                    password: fields.password
+                }
+            ])
+            .then(results => {
+                if (JSON.stringify(results).length > 0) {
+                  return(
+                    console.log(JSON.stringify(results).length),
+                    res.json(results)
+                  )
+                } else {
+                  return res.status(406).send('Not Acceptable');
+                }
+            })
+            .catch(error => {
+            return res.json(error)
+            })
+    })
+})
