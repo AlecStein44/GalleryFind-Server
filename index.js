@@ -1,15 +1,3 @@
-/*const express = require('express');
-const knex = require('knex')
-const cors = require('cors');
-const bodyParser= require('body-parser')
-const formidable = require('formidable');
-const app = express();
-app.use(cors());
-app.use(express.static('public'));
-app.use(express.json());
-const { NODE_ENV } = require('./config')
-const { PORT, DB_URL} = require('./config')*/
-
 const express = require('express');
 const knex = require('knex')
 const morgan = require('morgan')
