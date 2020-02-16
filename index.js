@@ -1,4 +1,4 @@
-const express = require('express');
+/*const express = require('express');
 const knex = require('knex')
 const cors = require('cors');
 const bodyParser= require('body-parser')
@@ -8,7 +8,23 @@ app.use(cors());
 app.use(express.static('public'));
 app.use(express.json());
 const { NODE_ENV } = require('./config')
-const { PORT, DB_URL} = require('./config')
+const { PORT, DB_URL} = require('./config')*/
+
+const express = require('express');
+const knex = require('knex')
+const morgan = require('morgan')
+const cors = require('cors');
+const bodyParser= require('body-parser')
+const multer = require('multer');
+const formidable = require('formidable')
+const cloudinary = require('cloudinary')
+const { NODE_ENV } = require('./config')
+const { PORT, DB_URL, CLOUDINARY_URL } = require('./config')
+const app = express();
+app.use(morgan('dev'));
+app.use(cors());
+app.use(express.static('public'));
+app.use(express.json());
 
 const db = knex({
   client: 'pg',
