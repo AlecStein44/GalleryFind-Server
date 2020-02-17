@@ -76,14 +76,7 @@ app.post('/signup', (req, res) => {
                 }
             ])
             .then(results => {
-                if (JSON.stringify(results).length > 0) {
-                  return(
-                    console.log(JSON.stringify(results).length),
-                    res.json(results)
-                  )
-                } else {
-                  return res.status(406).send('Not Acceptable');
-                }
+                return res.json(results)
             })
             .catch(error => {
             return res.json(error)
