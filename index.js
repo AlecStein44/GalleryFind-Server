@@ -83,8 +83,10 @@ app.post('/signup', (req, res) => {
                         return res.json(results)
                        })
                 } else {
-                  return res.status(401)
-                  
+                  return (
+                    res.status(401)
+                    console.log('error happened')
+                  )
                 }
             })
             .catch(error => {
