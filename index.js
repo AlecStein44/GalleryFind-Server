@@ -66,23 +66,28 @@ app.post('/signup', (req, res) => {
     form.parse(req, function(err, fields, files) {
         console.log(files)
         console.log(fields)
-        let status = 400;
-          db('userdata')
-              .insert([
-                {
-                    email: fields.email,
-                    username: fields.username,
-                    password: fields.password
+        db
+            .select(*)
+            .from(userdata)
+            .where("email", email)
+            .andWhere("username", username)
+            .then(emailuserList => {
+                if (emailuserList.length === 0) {
+                    return db('userdata')
+                      .insert([{
+                        email: fields.email,
+                        username: fields.username,
+                        password: fields.password
+                      }])
+                      .then(results => {
+                        return res.json(results)
+                       })
+                } else {
+                  return res.status(401)
+                  
                 }
-            ])
-            .then(results => {
-                return res.json(results)
-            })
             .catch(error => {
-            return(
-              res.status(401);
-              res.send('Same Username or Email submitted');
-             )
+            return res.json(error)
             })
     })
 })
