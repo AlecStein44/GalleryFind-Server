@@ -67,7 +67,7 @@ app.post('/signup', (req, res) => {
         console.log(files)
         console.log(fields)
         db
-            .select(*)
+            .select('*')
             .from(userdata)
             .where("email", email)
             .andWhere("username", username)
@@ -86,6 +86,7 @@ app.post('/signup', (req, res) => {
                   return res.status(401)
                   
                 }
+            })
             .catch(error => {
             return res.json(error)
             })
