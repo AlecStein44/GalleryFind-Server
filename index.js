@@ -79,7 +79,7 @@ app.post('/signup', (req, res) => {
                 return res.json(results)
             })
             .catch(error => {
-            return res.status(401)
+            return res.status(400)
             })
     })
 })
