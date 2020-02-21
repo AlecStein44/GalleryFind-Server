@@ -84,7 +84,7 @@ app.post('/signup', (req, res) => {
                        })
                 } else {
                   return (
-                    res.status(401)
+                    res.status(401),
                     console.log('error happened')
                   )
                 }
