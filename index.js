@@ -94,3 +94,17 @@ app.post('/signup', (req, res) => {
             })
     })
 })
+
+app.get('/login', (req, res) => {
+    db
+    .select('*')
+    .from('userdata')
+    .where({username: req.query.username},{password: req.query.password})
+    .then(data => {
+       return (
+            res.json(data),
+            console.log(data)
+       )
+    })
+    console.log(req.query.search)
+})
