@@ -102,15 +102,17 @@ app.get('/login', (req, res) => {
     .where({username: req.query.username},{password: req.query.password})
     .then(data => {
       if(data.password === req.query.password) {   
-        .then(data => {
+        return .then(data => {
           return (
             res.json(data),
             console.log(data)
           )
         })
       } else {
-        res.status(401),
-        console.log('error happened')
+        return (
+          res.status(401),
+          console.log('error happened')
+        )
       }
     console.log(req.query.search)
 })
