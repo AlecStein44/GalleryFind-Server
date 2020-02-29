@@ -111,12 +111,16 @@ app.get('/login', (req, res) => {
                 res.json(data),
                 console.log(data)
               )
-            })
+              })
       } else {
         return (
           res.status(401),
           console.log('error happened')
         )
       }
+    })
+    .catch(error => {
+        return res.json(error)
+    })
     console.log(req.query.search)
 })
