@@ -114,7 +114,7 @@ app.get('/login', (req, res) => {
               })
       } else {
         return (
-          res.status(401),
+          res.json([]),
           console.log('error happened')
         )
       }
