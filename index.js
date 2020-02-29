@@ -111,7 +111,7 @@ app.get('/login', (req, res) => {
                 res.json(data),
                 console.log(data)
               )
-            }
+            })
       } else {
         return (
           res.status(401),
