@@ -115,7 +115,8 @@ app.get('/login', (req, res) => {
       } else {
         return (
           res.json([]),
-          console.log('error happened')
+          console.log('error happened'),
+          console.log(data)
         )
       }
     })
