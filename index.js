@@ -101,7 +101,7 @@ app.get('/login', (req, res) => {
     .from('userdata')
     .where({username: req.query.username},{password: req.query.password})
     .then(data => {
-      if(data.password === req.query.password) {   
+      if(data[0].password === req.query.password) {   
           return db
             .select('*')
             .from('userdata')
