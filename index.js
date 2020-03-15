@@ -69,8 +69,8 @@ app.post('/signup', (req, res) => {
         db
             .select('*')
             .from('userdata')
-            .where("email", email)
-            .andWhere("username", username)
+            .where("email": fields.email)
+            .andWhere("username": fields.username)
             .then(emailuserList => {
                 if (emailuserList.length === 0) {
                     return db('userdata')
