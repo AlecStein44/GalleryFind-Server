@@ -130,6 +130,7 @@ app.get('/messages', (req, res) => {
     db
         .select('*')
         .from('messages')
+        .where({user1: req.query.user1})
         .then(data => {
            return (
                 res.json(data),
