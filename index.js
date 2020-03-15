@@ -130,7 +130,11 @@ app.get('/messages', (req, res) => {
     db
         .select('*')
         .from('messages')
-        .where({user1: req.query.user1})
+        .where(function () {
+          this
+            .where({user1: req.query.user1})
+            .orWhere({user2: req.query.user1})
+        })
         .then(data => {
            return (
                 res.json(data),
