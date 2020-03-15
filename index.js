@@ -125,3 +125,16 @@ app.get('/login', (req, res) => {
     })
     console.log(req.query.search)
 })
+
+app.get('/messages', (req, res) => {
+    db
+        .select('*')
+        .from('messages')
+        .then(data => {
+           return (
+                res.json(data),
+                console.log(data)
+           )
+        })
+    
+})
