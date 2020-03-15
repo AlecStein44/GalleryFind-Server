@@ -68,7 +68,7 @@ app.post('/signup', (req, res) => {
         console.log(fields)
         db
             .select('*')
-            .from(userdata)
+            .from('userdata')
             .where("email", email)
             .andWhere("username", username)
             .then(emailuserList => {
