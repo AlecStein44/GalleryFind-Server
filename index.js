@@ -133,7 +133,7 @@ app.get('/messages', (req, res) => {
         .where(function () {
           this
             .where({user1: req.query.user1})
-            .orWhere({user2: req.query.user1})
+            .orWhere({user2: req.query.user1}, {messnum: 0})
         })
         .then(data => {
            return (
