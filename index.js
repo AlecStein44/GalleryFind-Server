@@ -146,7 +146,7 @@ app.get('/messages', (req, res) => {
 
 app.get('/account', (req,res) => {
     db
-        .select('*")
+        .select('*')
         .from('profiles')
         .then(data => {
            return (
